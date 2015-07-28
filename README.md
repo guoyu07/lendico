@@ -33,7 +33,7 @@ create database if not exists lendico_bank;
 ```sh
 $ composer install
 ```
-Execute the [Doctrine](http://docs.doctrine-project.org/projects/doctrine-migrations/en/latest/) migrations.
+Execute [Doctrine](http://docs.doctrine-project.org/projects/doctrine-migrations/en/latest/) migrations.
 ```sh
 cd your-project-path/ && app/console doctrine:migrations:migrate --no-interaction
 ```
