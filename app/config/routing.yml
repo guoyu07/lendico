@@ -1,0 +1,4 @@
+jeancsil_bank:
+    resource: "@JeancsilBankBundle/Controller/"
+    type:     annotation
+    prefix:   /
