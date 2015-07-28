@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="jeancsil_bank.account.controller.class">Jeancsil\Bundle\BankBundle\Controller\AccountController</parameter>
+    </parameters>
+
+    <services>
+        <service id="jeancsil_bank.account.controller" class="%jeancsil_bank.account.controller.class%">
+            <call method="setContainer">
+                <argument type="service" id="service_container" />
+            </call>
+        </service>
+
+        <service id="jeancsil_bank.account.repository"
+                 factory-service="doctrine.orm.entity_manager"
+                 factory-method="getRepository"
+                 class="Jeancsil\Bundle\BankBundle\Repository\AccountRepository">
+            <argument>Jeancsil\Bundle\BankBundle\Entity\Account</argument>
+        </service>
+
+        <service id="jeancsil_bank.client.repository"
+                 factory-service="doctrine.orm.entity_manager"
+                 factory-method="getRepository"
+                 class="Jeancsil\Bundle\BankBundle\Repository\ClientRepository">
+            <argument>Jeancsil\Bundle\BankBundle\Entity\Client</argument>
+        </service>
+    </services>
+</container>
