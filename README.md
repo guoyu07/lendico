@@ -40,3 +40,6 @@ cd your-project-path/ && app/console doctrine:migrations:migrate --no-interactio
 
 ### Examples
 *See API.md*
+
+### Postman
+You could import a postman collection using Postman-LendicoBank.json
